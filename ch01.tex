@@ -679,6 +679,33 @@
 	\end{frame}
 	
 	\begin{frame}
+		例 1.18 设甲袋有 $N-1$ 只白球和 1 只黑球, 乙袋中有 $N$ 只白球.若每次从甲、乙户 袋中各取一球交换, 记 $A_{k}$ 为经过 $k$ 次交换后黑球仍在甲袋中, 证明:
+		
+		\begin{align*}
+			&P\left(A_{k+1}\right)\\
+			&=\frac{1}{N}+\left(1-\frac{2}{N}\right) P\left(A_{k}\right), \quad k=1,2, \cdots
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+		证明 $A_{k}$ 表示 $k$ 次交换后黑球仍在甲袋, 因此, $A_{k}$ 发生时, 甲袋有 $N-1$ 只白球 1 只黑球, 此后若 $A_{k+1}$ 发生, 等价于从甲袋取出白球; $\bar{A}_{k}$ 发生时, 乙袋有 $N-1$ 只白球 1 只黑球, 此后若 $A_{k+1}$ 发生, 等价于从乙袋取出黑球, 因此
+		
+		$$
+		P\left(A_{k+1} \mid A_{k}\right)=\frac{N-1}{N}, P\left(A_{k+1} \mid \bar{A}_{k}\right)=\frac{1}{N} \text { . }
+		$$
+		
+		由全概率公式,
+		
+		$$
+		\begin{aligned}
+			P\left(A_{k+1}\right) & =P\left(A_{k}\right) P\left(A_{k+1} \mid A_{k}\right)+P\left(\bar{A}_{k}\right) P\left(A_{k+1} \mid \bar{A}_{k}\right) \\
+			& =P\left(A_{k}\right) \frac{N-1}{N}+\left[1-P\left(A_{k}\right)\right] \frac{1}{N} \\
+			& =\frac{1}{N}+\left(1-\frac{2}{N}\right) P\left(A_{k}\right) .
+		\end{aligned}
+		$$
+	\end{frame}
+		
+	\begin{frame}
 		定理 1.2（\textbf{贝叶斯公式}） 设$\{A_i, i = 1, 2, \dots, n\}$为划分，则对事件$B$有
 		\[
 		P(A_i | B) = \frac{P(A_i)P(B | A_i)}{\sum_{k = 1}^{n}P(A_k)P(B | A_k)}
@@ -695,13 +722,18 @@
 	\end{frame}
 	
 	\begin{frame}
+		例 1.17 甲袋中有5个球（3红2白），乙袋中有8个球（4红4白）。先从甲袋中取2个球放入乙袋。再从乙袋中取出一个球。
+		
 		例 1.19 延续例 1.17：已知最后从乙袋中取出白球，问从甲袋中放入乙袋的2球都是红球的概率。
-		
-		
+	\end{frame}
+	
+	\begin{frame}
 		\[
 		P(A_2 | B) = \frac{P(A_2 \cap B)}{\sum_{i = 1}^{3}P(A_i)P(B | A_i)} = \frac{12}{48}
 		\]
-		
+	\end{frame}
+	
+	\begin{frame}
 		例 1.20 一批产品中有96\%是合格品。现有一种简化的检查方法，它把合格品判为合格品的概率是0.98，把不合格品误判为合格品的概率为0.05。任取一件产品。计算
 		\begin{enumerate}
 			\item 判定结果为合格品的概率。
