@@ -1,0 +1,117 @@
+\documentclass[11pt,addpoints,landscape]{exam}
+\usepackage[UTF8]{ctex}
+\usepackage{amsfonts,amssymb,amsmath, amsthm}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\begin{document}
+	\begin{center}
+		\textbf{《概率论与数理统计》期中试卷} \\
+		2024/2025学年第一学期\hspace{0.3cm}院系：\underline{\hspace{1in}}\hspace{0.3cm} 任课老师：\underline{\hspace{1in}} \\
+		学号：\underline{\hspace{1in}}\hspace{0.3cm} 姓名：\underline{\hspace{1in}}\hspace{0.3cm} 考试成绩：\underline{\hspace{1in}}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			题号 & 1（8分） & 2（8分） & 3（8分） & 4（16分） & 5（16分） & 6（25分） & 7（10分） & 8（9分） & 总分 \\
+			\hline
+			得分 &  &  &  &  &  &  &  &  &  \\
+			\hline
+		\end{tabular}
+	\end{center} 
+	\begin{multicols}{2}
+		
+		\begin{questions} %------------------------------------------
+			\question[8]
+			设随机变量$X\sim N(\mu, 36), P(X < 15) = P(X > 35) = 0.048$。另外$\Phi(2) = 0.977$。试求$\mu, c$，使得$P(|X - \mu| \leq c) = 0.954$。
+			\vspace{4cm}
+			\question
+			供应商A的豆种发芽率为95\%，供应商B的豆种发芽率为70\%。一个豆种包装公司的豆种30\%来自供应商A，70\%来自供应商B。并且全部豆种被均匀混合。
+			\begin{parts}
+				\part[4]
+				计算从混合好的豆种中随机抽取的一粒可以发芽的概率$P(G)$.\\
+				\vspace{1.5cm}
+				\part[4]
+				给定一粒被抽取的种子可以发芽，计算它来自供应商A的条件概率。\\
+				\vspace{1.5cm}
+			\end{parts}
+			
+			\question
+			一个教授给她的学生们出了15道作业题，其中4道将被当作期中考试题。一个学生只有时间学习15道题中的5道。请计算如下概率
+			\begin{parts}
+				\part[4]
+				学生学习到了3道期中考试题。\\
+				\vspace{1cm}
+				\part[4]
+				至少学习到了1道期中考试题。\\
+				\vspace{1cm}
+			\end{parts}
+			\question
+			对于下面每个函数，（i）计算常量$c$使得$f(x)$是一个随机变量$X$的密度函数,(ii)计算概率分布函数$F(x) = P(X \leq x)$，（iii）计算$X$均值$\mu$和方差$\sigma ^ 2$
+			\begin{parts}
+				\part[8]
+				$f(x) = (3 / 16)x ^ 2 , -c < x < c$。\\
+				\newpage
+				\mbox{}
+				\vspace{4cm}
+				\part[8]
+				$f(x) = c / \sqrt{x}, 0 < x < 1$。\\
+			\end{parts}
+			\vspace{8cm}
+			\question
+			投掷两枚正四面体骰子，一个红色，一个黑色。每一个骰子等可能出现1、2、3、4四种结果。用$X$代表红色骰子出现的结果，$Y$代表两个骰子\textbf{结果之和}。
+			\begin{parts}
+				\part[4]
+				计算$X,Y$的联合分布列。\\
+			    \vspace{4cm}
+				\part[4]
+				计算$X$的边缘分布列。\\
+				\vspace{4cm}
+				\part[4]
+				计算$Y$的边缘分布列。\\
+				\vspace{4cm}
+				\part[4]
+				请说明$X, Y$是否独立，及其原因。\\
+				\vspace{4cm}
+			\end{parts}
+			\question
+			$X, Y$有联合密度函数$f(x, y) = x + y, 0 \leq x \leq 1, 0 \leq y \leq 1$
+			\begin{parts}
+				\part[5]
+				计算边缘密度函数$f_X(x), f_Y(y)$。\\
+				\vspace{4cm}
+				\part[5]
+				随机变量$X, Y$是否独立？请解释原因。\\
+				\vspace{1.5cm}
+				\part[5]
+				计算$X, Y$的均值和方差。\\
+				\vfill\null
+				\mbox{}
+				\vspace{5cm}
+				\part[5]
+				计算$P(X \leq Y)$ \\
+				\vspace{5cm}
+				\newpage
+				\part[5]
+				计算$Z = X + Y$的密度函数。\\
+			\end{parts}
+			\vspace{12cm}
+			\question[10]
+			$X$有密度函数$f(x) = x\exp(-x ^ 2 / 2)$, $0 < x < \infty$. $Y = X ^ 2$。计算$Y$的密度函数。\\
+				\vfill\null
+			\columnbreak
+			\mbox{}
+			\vspace{3cm}
+			\question
+			随机变量$X, Y$有联合分布列$f(x, y) = 1 / 4, (x, y) \in S = \{(0, 0), (1, 1), (1, -1), (2, 0)\}$
+			\begin{parts}
+				\part[4]
+				$X, Y$是否独立？请解释原因。 \\
+				\vspace{4cm}
+				\part[5]
+				计算协方差和相关系数。\\
+				\vspace{3cm}
+			\end{parts}
+		\end{questions}
+	\end{multicols}
+\end{document}

@@ -1,40 +1,25 @@
-\documentclass[11pt,addpoints]{exam}
+\documentclass[11pt,addpoints,landscape]{exam}
 \usepackage[UTF8]{ctex}
 \usepackage{amsfonts,amssymb,amsmath, amsthm}
 \usepackage{graphicx}
 \usepackage{systeme}
 \usepackage{pgf,tikz,pgfplots}
-\pgfplotsset{compat=1.15}
-\usepgfplotslibrary{fillbetween}
 \usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-\usetikzlibrary{calc}
-
-
-\pagestyle{headandfoot}
-
-\firstpageheader{11100200期中考试 (\numpoints\ 分)\\ 11/12/2024}{}{
-	姓名: \underline{\hspace{2.5in}}\\
-	学号：\underline{\hspace{2.45in}}}
-%\firstpageheadrule
-
-\runningheader{11100200期中考试}{}{Page \thepage\ of \numpages}
-\runningheadrule
-
-\firstpagefooter{}{}{}
-\runningfooter{}{}{}
-
-
+\usepackage{multicol}
 \begin{document}
-	
 	\begin{center}
-		\fbox{\fbox{\parbox{6in}{\centering
-					本次考试共有8道大题，其中一些有多个部分。请仔细阅读题目，写下必要的推导过程以及最后答案。你可以携带一张考前准备的A4纸。上面可以写下你认为有帮助的内容。祝你好运！
-		}}}
-	\end{center}
-	
-	\newpage
-	
+		\textbf{《概率论与数理统计》期中试卷} \\
+		2024/2025学年第一学期\hspace{0.3cm}院系：\underline{\hspace{1in}}\hspace{0.3cm} 任课老师：\underline{\hspace{1in}} \\
+		学号：\underline{\hspace{1in}}\hspace{0.3cm} 姓名：\underline{\hspace{1in}}\hspace{0.3cm} 考试成绩：\underline{\hspace{1in}}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			题号 & 1（8分） & 2（8分） & 3（8分） & 4（16分） & 5（16分） & 6（25分） & 7（10分） & 8（9分） & 总分 \\
+			\hline
+			得分 &  &  &  &  &  &  &  &  &  \\
+			\hline
+		\end{tabular}
+	\end{center} 
+	\begin{multicols}{2}
 	
 	\begin{questions} %------------------------------------------
 	\question[8]
@@ -58,10 +43,8 @@
 			给定一粒被抽取的种子可以发芽，计算它来自供应商A的条件概率。\\
 			解：
 			$P(A \mid G)=\dfrac{P(A \cap G)}{P(G)}=\dfrac{P(G \mid A) \cdot P(A)}{P(G)}=\dfrac{0.285}{0.775}=0.37$
-			\vspace{\stretch{2}}
+			\vspace{\stretch{1}}
 		\end{parts}
-		
-		\newpage
 		
 	 	\question
 	 	一个教授给她的学生们出了15道作业题，其中4道将被当作期中考试题。一个学生只有时间学习15道题中的5道。请计算如下概率
@@ -69,20 +52,14 @@
 	 		\part[4]
 	 		学生学习到了3道期中考试题。\\
 	 		解：$\dfrac{C_4^3C_{11}^2}{C_{15}^5} = 0.073$.
-	 		\vspace{\stretch{1}}
 	 		\part[4]
 	 		至少学习到了1道期中考试题。\\
 	 		解：$1 - \dfrac{C_{11}^5}{C_{15}^5} = 0.8462$
-	 		\vspace{\stretch{1}}
 	 	\end{parts}
-	 	
-	 	\newpage
-	 	
-	 	\question
+	   \question
 	 	对于下面每个函数，（i）计算常量$c$使得$f(x)$是一个随机变量$X$的密度函数,(ii)计算概率分布函数$F(x) = P(X \leq x)$，（iii）计算$X$均值$\mu$和方差$\sigma ^ 2$
-	 	
 	 	\begin{parts}
-	 		\part[10]
+	 		\part[8]
 	 		$f(x) = (3 / 16)x ^ 2 , -c < x < c$。\\
 	 		解：	\\
 	 		(i) $\int_{-c}^{c}(3 / 16) x^{2} d x=1 \Leftrightarrow 	c^{3} / 8 =1  \Leftrightarrow c =2$
@@ -101,9 +78,7 @@
 	 			\sigma^{2} & =\int_{-2}^{2}\left(x^{2}\right)(3 / 16)\left(x^{2}\right) d x=\dfrac{12}{5} .
 	 		\end{aligned}
 	 		$$
-	 		\vspace{\stretch{1}}
-	 		\newpage
-	 		\part[10]
+	 		\part[8]
 	 		$f(x) = c / \sqrt{x}, 0 < x < 1$。\\
 	 		解：
 	 		(i) $\int_{0}^{1} \dfrac{c}{\sqrt{x}} d x =1 \Leftrightarrow 2 c  =1 \Leftrightarrow c=1 / 2$
@@ -131,19 +106,19 @@
 	 	\question
 	 	投掷两枚正四面体骰子，一个红色，一个黑色。每一个骰子等可能出现1、2、3、4四种结果。用$X$代表红色骰子出现的结果，$Y$代表两个骰子\textbf{结果之和}。
 	 	\begin{parts}
-	 		\part[5]
+	 		\part[4]
 	 		计算$X,Y$的联合分布列。\\
 	 		解：$f(x, y) = 1 / 16, x = 1, 2, 3, 4; y = x + 1, x + 2, x + 3, x +4$
 	 		\vspace{\stretch{2}}
-	 		\part[5]
+	 		\part[4]
 	 		计算$X$的边缘分布列。\\
 	 		解：$f_X(x) = 1 / 4, x = 1, 2, 3, 4$
 	 		\vspace{\stretch{1}}
-	 		\part[5]
+	 		\part[4]
 	 		计算$Y$的边缘分布列。\\
 	 		解：$f_Y(y) = (4 − |y − 5|)/16, y = 2, 3, 4, 5, 6, 7, 8;$
 	 		\vspace{\stretch{1}}
-	 		\part[5]
+	 		\part[4]
 	 		请说明$X, Y$是否独立，及其原因。\\
 	 		解：不独立。因为$Y$取值范围与$X$有关。
 	 		\vspace{\stretch{1}}
@@ -203,7 +178,7 @@
 	 	\question
 	 	随机变量$X, Y$有联合分布列$f(x, y) = 1 / 4, (x, y) \in S = \{(0, 0), (1, 1), (1, -1), (2, 0)\}$
 	 	\begin{parts}
-	 		\part[5]
+	 		\part[4]
 	 		$X, Y$是否独立？请解释原因。 \\
 	 		解：否。$Y$的取值范围由$X$决定
 	 		\vspace{\stretch{1}}
@@ -213,5 +188,5 @@
 	 		\vspace{\stretch{1}}
 	 	\end{parts}
 	\end{questions}
-	
+	\end{multicols}
 \end{document}
