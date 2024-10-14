@@ -1,4 +1,4 @@
-\documentclass[11pt,addpoints,landscape]{exam}
+\documentclass[10pt,addpoints,portrait]{exam}
 \usepackage[UTF8]{ctex}
 \usepackage{amsfonts,amssymb,amsmath, amsthm}
 \usepackage{graphicx}
@@ -7,20 +7,21 @@
 \usepackage{mathrsfs}
 \usepackage{multicol}
 \begin{document}
+	
 	\begin{center}
 		\textbf{《概率论与数理统计》期中试卷} \\
 		2024/2025学年第一学期\hspace{0.3cm}院系：\underline{\hspace{1in}}\hspace{0.3cm} 任课老师：\underline{\hspace{1in}} \\
 		学号：\underline{\hspace{1in}}\hspace{0.3cm} 姓名：\underline{\hspace{1in}}\hspace{0.3cm} 考试成绩：\underline{\hspace{1in}}
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-			\hline
-			题号 & 1（8分） & 2（8分） & 3（8分） & 4（16分） & 5（16分） & 6（25分） & 7（10分） & 8（9分） & 总分 \\
-			\hline
-			得分 &  &  &  &  &  &  &  &  &  \\
-			\hline
-		\end{tabular}
+		{	\small
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+				\hline
+				题号 & 1(8分) &2(8分)&3(8分) & 4(16分)& 5(16分) & 6(25分) & 7(10分) & 8(9分) & 总分 \\
+				\hline
+				得分 &  &  & & &  &  &  &  &  \\
+				\hline
+			\end{tabular}
+		}
 	\end{center} 
-	\begin{multicols}{2}
-	
 	\begin{questions} %------------------------------------------
 	\question[8]
 	设随机变量$X\sim N(\mu, 36), P(X < 15) = P(X > 35) = 0.048$。另外$\Phi(2) = 0.977$。试求$\mu, c$，使得$P(|X - \mu| \leq c) = 0.954$。
@@ -56,16 +57,25 @@
 	 		至少学习到了1道期中考试题。\\
 	 		解：$1 - \dfrac{C_{11}^5}{C_{15}^5} = 0.8462$
 	 	\end{parts}
+	 	\question[10]
+	 	$X$有密度函数$p(x) = x\exp(-x ^ 2 / 2), 0 < x < \infty. Y = X ^ 2$。计算$Y$的密度函数。\\
+	 	解：
+	 	$x=\sqrt{y}, \dfrac{d x}{d y}=\dfrac{1}{2 \sqrt{y}}$ 并且 $0<x<\infty$ 映射到 $0<y<\infty$. 所以
+	 	
+	 	$$
+	 	g(y)=\sqrt{y}\exp(-y / 2)\left|\dfrac{1}{2 \sqrt{y}}\right|=\dfrac{1}{2} e^{-y / 2}, \quad 0<y<\infty
+	 	$$
+	 	\vspace{\stretch{1}}
 	   \question
-	 	对于下面每个函数，（i）计算常量$c$使得$f(x)$是一个随机变量$X$的密度函数,(ii)计算概率分布函数$F(x) = P(X \leq x)$，（iii）计算$X$均值$\mu$和方差$\sigma ^ 2$
+	 	对于下面每个函数，（i）计算常量$c$使得$p(x)$是一个随机变量$X$的密度函数,(ii)计算概率分布函数$F(x) = P(X \leq x)$，（iii）计算$X$均值$EX$和方差$DX$
 	 	\begin{parts}
 	 		\part[8]
-	 		$f(x) = (3 / 16)x ^ 2 , -c < x < c$。\\
+	 		$p(x) = (3 / 16)x ^ 2 , -c < x < c$。\\
 	 		解：	\\
 	 		(i) $\int_{-c}^{c}(3 / 16) x^{2} d x=1 \Leftrightarrow 	c^{3} / 8 =1  \Leftrightarrow c =2$
 	 		
 	 		
-	 		(ii) $F(x)=\int_{-\infty}^{x} f(t) d t	=\int_{-2}^{x}(3 / 16) t^{2} d t=\dfrac{t^{3}}{16}\rvert_{-2}^{x}=\dfrac{x^{3}}{16}+\dfrac{1}{2}$
+	 		(ii) $F(x)=\int_{-\infty}^{x} p(t) d t	=\int_{-2}^{x}(3 / 16) t^{2} d t=\dfrac{t^{3}}{16}\rvert_{-2}^{x}=\dfrac{x^{3}}{16}+\dfrac{1}{2}$
 	 		
 	 		
 	 		$$
@@ -74,18 +84,18 @@
 	 		(iii)
 	 		$$
 	 		\begin{aligned}
-	 			\mu & =\int_{-2}^{2}(x)(3 / 16)\left(x^{2}\right) d x=0 \\
-	 			\sigma^{2} & =\int_{-2}^{2}\left(x^{2}\right)(3 / 16)\left(x^{2}\right) d x=\dfrac{12}{5} .
+	 			EX & =\int_{-2}^{2}(x)(3 / 16)\left(x^{2}\right) d x=0 \\
+	 			DX & =\int_{-2}^{2}\left(x^{2}\right)(3 / 16)\left(x^{2}\right) d x=\dfrac{12}{5} .
 	 		\end{aligned}
 	 		$$
 	 		\part[8]
-	 		$f(x) = c / \sqrt{x}, 0 < x < 1$。\\
+	 		$p(x) = c / \sqrt{x}, 0 < x < 1$。\\
 	 		解：
 	 		(i) $\int_{0}^{1} \dfrac{c}{\sqrt{x}} d x =1 \Leftrightarrow 2 c  =1 \Leftrightarrow c=1 / 2$
 	 		
 			(ii)
 	 		$$\begin{aligned}
-	 			F(x) & =\int_{-\infty}^{x} f(t) d t \\
+	 			F(x) & =\int_{-\infty}^{x} p(t) d t \\
 	 			& =\int_{0}^{x} \dfrac{1}{2 \sqrt{t}} d t \\
 	 			& =\sqrt{t}|_{0}^{x}=\sqrt{x}, \\
 	 			F(x) & = \begin{cases}0, & -\infty<x<0 \\
@@ -96,63 +106,62 @@
 	 		(iii)
 	 		$$
 	 		\begin{aligned}
-	 			\mu & =\int_{0}^{1}(x)(1 / 2) / \sqrt{x} d x=\dfrac{1}{3} \\
+	 			EX & =\int_{0}^{1}(x)(1 / 2) / \sqrt{x} d x=\dfrac{1}{3} \\
 	 			E\left(X^{2}\right) & =\int_{0}^{1}\left(x^{2}\right)(1 / 2) / \sqrt{x} d x=\dfrac{1}{5} \\
-	 			\sigma^{2} & =\dfrac{1}{5}-\left(\dfrac{1}{3}\right)^{2}=\dfrac{4}{45}
+	 			DX & =\dfrac{1}{5}-\left(\dfrac{1}{3}\right)^{2}=\dfrac{4}{45}
 	 		\end{aligned}
 	 		$$
 	 	\end{parts}
 	 	
 	 	\question
-	 	投掷两枚正四面体骰子，一个红色，一个黑色。每一个骰子等可能出现1、2、3、4四种结果。用$X$代表红色骰子出现的结果，$Y$代表两个骰子\textbf{结果之和}。
+	 	投掷两枚骰子，一个红色，一个黑色。每一个骰子等可能出现1、2、3、4、5、6六种结果。用$X$代表红色骰子出现的结果除以3的余数，用$Y$代表黑色骰子出现的结果除以3的余数。$Z = X + Y$。
 	 	\begin{parts}
 	 		\part[4]
-	 		计算$X,Y$的联合分布列。\\
-	 		解：$f(x, y) = 1 / 16, x = 1, 2, 3, 4; y = x + 1, x + 2, x + 3, x +4$
-	 		\vspace{\stretch{2}}
+	 		计算$X,Z$的联合分布列。\\
+	 		解：$p(x, z) = 1 / 9, x = 0, 1, 2; z = x + 0, x + 1, x + 2$
+	 		\vspace{3cm}
 	 		\part[4]
 	 		计算$X$的边缘分布列。\\
-	 		解：$f_X(x) = 1 / 4, x = 1, 2, 3, 4$
+	 		解：$p_X(x) = 1 / 3, x = 0, 1, 2$
 	 		\vspace{\stretch{1}}
 	 		\part[4]
-	 		计算$Y$的边缘分布列。\\
-	 		解：$f_Y(y) = (4 − |y − 5|)/16, y = 2, 3, 4, 5, 6, 7, 8;$
+	 		计算$Z$的边缘分布列。\\
+	 		解：$p_Z(z) = (3 − |z − 2|)/9, z = 0, 1, 2, 3, 4;$
 	 		\vspace{\stretch{1}}
 	 		\part[4]
-	 		请说明$X, Y$是否独立，及其原因。\\
-	 		解：不独立。因为$Y$取值范围与$X$有关。
-	 		\vspace{\stretch{1}}
+	 		请说明$X, Z$是否独立，及其原因。\\
+	 		解：不独立。因为$Z$取值范围与$X$有关。
+	 		\vspace{1cm}
 	 	\end{parts}
-	 	\newpage
 	 	\question
-	 	$X, Y$有联合密度函数$f(x, y) = x + y, 0 \leq x \leq 1, 0 \leq y \leq 1$
+	 	$X, Y$有联合密度函数$p(x, y) = x + y, 0 \leq x \leq 1, 0 \leq y \leq 1$
 	 	\begin{parts}
 	 		\part[5]
-	 		计算边缘密度函数$f_X(x), f_Y(y)$。\\
+	 		计算边缘密度函数$p_X(x), p_Y(y)$。\\
 	 		解：
-	 		 $\quad f_{X}(x)=\int_{0}^{1}(x+y) d y	=(x y+\dfrac{1}{2} y^{2})\bigg|_{0}^{1}=x+\dfrac{1}{2}, \quad 0 \leq x \leq 1$
+	 		 $\quad p_{X}(x)=\int_{0}^{1}(x+y) d y	=(x y+\dfrac{1}{2} y^{2})\bigg|_{0}^{1}=x+\dfrac{1}{2}, \quad 0 \leq x \leq 1$
 	 		
-	 		$f_{Y}(y)=\int_{0}^{1}(x+y) d x=y+\dfrac{1}{2}, \quad 0 \leq y \leq 1 ;$
+	 		$p_{Y}(y)=\int_{0}^{1}(x+y) d x=y+\dfrac{1}{2}, \quad 0 \leq y \leq 1 ;$
 	 		\vspace{\stretch{1}}
 	 		\part[5]
 	 		随机变量$X, Y$是否独立？请解释原因。\\
 	 		解：
 	 		否。
-	 		$f(x, y)=x+y \neq\left(x+\dfrac{1}{2}\right)\left(y+\dfrac{1}{2}\right)=f_{X}(x) f_{Y}(y)$.
+	 		$p(x, y)=x+y \neq\left(x+\dfrac{1}{2}\right)\left(y+\dfrac{1}{2}\right)=p_{X}(x) p_{Y}(y)$.
 	 		\vspace{\stretch{0.5}}
 	 		\part[5]
 	 		计算$X, Y$的均值和方差。\\
 	 		解：
 	 		
-	 		(i) $\mu_{X}=\int_{0}^{1}x\left(x+\dfrac{1}{2}\right) d x=(\dfrac{1}{3} x^{3}+\dfrac{1}{4} x^{2})\bigg|_{0}^{1}=\dfrac{7}{12}$; \\
-	 		(ii) $\mu_{Y}=\int_{0}^{1} y\left(y+\dfrac{1}{2}\right) d y=\dfrac{7}{12}$;\\
+	 		(i) $EX=\int_{0}^{1}x\left(x+\dfrac{1}{2}\right) d x=(\dfrac{1}{3} x^{3}+\dfrac{1}{4} x^{2})\bigg|_{0}^{1}=\dfrac{7}{12}$; \\
+	 		(ii) $EY=\int_{0}^{1} y\left(y+\dfrac{1}{2}\right) d y=\dfrac{7}{12}$;\\
 	 		(iii) $E\left(X^{2}\right)=\int_{0}^{1} x^{2}\left(x+\dfrac{1}{2}\right) d x=(\dfrac{1}{4} x^{4}+\dfrac{1}{6} x^{3})\bigg|_{0}^{1}=\dfrac{5}{12}$,
 	 		
 	 		$
-	 		\sigma_{X}^{2}=E\left(X^{2}\right)-\mu_{X}^{2}=\dfrac{5}{12}-\left(\dfrac{7}{12}\right)^{2}=\dfrac{11}{144} .
+	 		DX=E\left(X^{2}\right)-EX^{2}=\dfrac{5}{12}-\left(\dfrac{7}{12}\right)^{2}=\dfrac{11}{144} .
 	 		$
 	 		
-	 		(iv) Similarly, $\sigma_{Y}^{2}=\dfrac{11}{144}$.
+	 		(iv) Similarly, $DY=\dfrac{11}{144}$.
 	 		\vspace{\stretch{1}}
 	 		\part[5]
 	 		计算$P(X \leq Y)$ \\
@@ -165,18 +174,8 @@
 	 		
 	 		$\begin{aligned} & 0 \leq z \leq 1 \\ & F_Z(z)=\int_0^z \int_0^{z-x} x+y d y d x \\ &=\frac{1}{3} z^3 \\ & p_Z(z)=F_Z^{\prime}(z)=\frac{1}{3} \times 3 z^2=z^2 \\ & 1<z \leq 2 \\ & F_Z(z)=1-\int_{z-1}^1 \int_{z-x}^1 x+y d y d x \\ &=-\frac{z^3-3 z^2+1}{3} \\ & p_Z(z)=F_z^{\prime}(z)=-z^2+2 z \\ & \text { 综上 } \quad p_Z(z)=\left\{\begin{array}{cc}z^2, & z \in[0,1] \\ -z^2+2 z, & z \in(1,2] \\ 0 & \text { 其它 }\end{array}\right.\end{aligned}$
 	 	\end{parts}
-	 	\newpage
-	 	\question[10]
-	 	$X$有密度函数$f(x) = x\exp(-x ^ 2 / 2), 0 < x < \infty. Y = X ^ 2$。计算$Y$的密度函数。\\
-	 	解：
-	 	$x=\sqrt{y}, \dfrac{d x}{d y}=\dfrac{1}{2 \sqrt{y}}$ 并且 $0<x<\infty$ 映射到 $0<y<\infty$. 所以
-	 	
-	 	$$
-	 	g(y)=\sqrt{y}\exp(-y / 2)\left|\dfrac{1}{2 \sqrt{y}}\right|=\dfrac{1}{2} e^{-y / 2}, \quad 0<y<\infty
-	 	$$
-	 	\vspace{\stretch{1}}
 	 	\question
-	 	随机变量$X, Y$有联合分布列$f(x, y) = 1 / 4, (x, y) \in S = \{(0, 0), (1, 1), (1, -1), (2, 0)\}$
+	 	随机变量$X, Y$有联合分布列$p(x, y) = 1 / 4, (x, y) \in S = \{(0, 0), (1, 1), (1, -1), (2, 0)\}$
 	 	\begin{parts}
 	 		\part[4]
 	 		$X, Y$是否独立？请解释原因。 \\
@@ -188,5 +187,4 @@
 	 		\vspace{\stretch{1}}
 	 	\end{parts}
 	\end{questions}
-	\end{multicols}
 \end{document}
