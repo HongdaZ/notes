@@ -1,0 +1,75 @@
+%!TEX program = xelatex
+\documentclass[14pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage[UTF8]{ctex}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage{float}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\title{	
+	\normalfont \huge
+	\textsc{概率统计} \\ [25pt] % Your university, school and/or department name(s)
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge 第一周作业答案 \\ % The assignment title
+	\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+	\date{}
+}
+
+\begin{document}
+	\maketitle % Print the title
+	3.某公司有17桶油漆，其中白漆10桶，黑漆4桶，红漆3桶。但各桶标签全部脱落。现有一顾客订货白漆 4 桶, 黑漆3桶, 红漆2桶。发货人随意将油泳发给顾客, 求顾客能如数得到订货的概率。
+	
+	\vspace*{1cm}
+	解：A：如数得到订货。
+	$P(A) = \frac{C_{10}^4 C_{4}^3 C_{3}^2}{C_{17}^{4 + 3 + 2}} = \frac{C_{10}^4 C_{4}^3 C_{3}^2}{C_{17}^9} \approx 0.1037$
+	
+	\vspace*{1cm}
+	7.从 $1 \sim 9$ 这 9 个数中有放回地取出 $n$ 个。试求取出的 $n$ 个数的乘积能被 10 整除的概率。
+	
+	\vspace*{1cm}
+	A:能被2整除。B：能被5整除。
+	$A \cap B = \overline{\bar{A} \cup \bar{B}}$。
+	\begin{align}
+		P(A \cap B) & = P(\overline{\bar{A} \cup \bar{B}}) \\
+		& =  1 - P(\bar{A} \cup \bar{B}) \\
+		& =  1 - (P(\bar{A}) + P(\bar{B}) - P(\bar{A} \cap \bar{B})) \\
+		& = 1 - (\frac{5 ^ n}{9 ^ n} + \frac{8 ^ n}{9 ^ n} - \frac{4 ^ n}{9 ^ n})
+	\end{align}
+	
+	\vspace*{1cm}
+	12.平面上点 $(p, q)$ 在 $|p| \leqslant 1,|q| \leqslant 1$ 内等可能出现, 求方程 $x^{2}+p x+q=0$ 有实根的概率。
+	
+	\vspace*{1cm}
+	解：$A:\text{方程有实根} \Leftrightarrow p ^ 2 - 4 q \geq 0 \Leftrightarrow q \leq \frac{p ^ 2}{4}$
+	
+	$\int_{-1}^{1}\frac{p ^ 2}{4} - (-1) dp = \frac{1}{6} + 2 = \frac{13}{6}$
+	
+	$P(A) = \frac{m(A)}{m(\Omega)} = \frac{13/6}{2 \times 2} = \frac{13}{24}$
+\end{document}

@@ -1,0 +1,127 @@
+%!TEX program = xelatex
+\documentclass[14pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage[UTF8]{ctex}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage{float}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\title{	
+	\normalfont \huge
+	\textsc{概率统计} \\ [25pt] % Your university, school and/or department name(s)
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge 第三周作业答案 \\ % The assignment title
+	\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+	\date{}
+}
+
+\begin{document}
+	\maketitle % Print the title
+	34 一次考试共有5道选择题, 每题有4个选项,只有一项正确。设每题 20 分, 60 分及格。(1) 求 一个考生靠蒙能及格的概率; (2)5 个这样的考生, 求至少有 2 人靠蒙能及格的概率。
+	
+	\vspace*{1cm}
+	解：
+	\begin{enumerate}[(1)]
+		\item $A_i:$第i题做对。则题目中为5重伯努利试验，且$p_1 = P(A_i) = \frac{1}{4}$。
+		\begin{align}
+			P_5^1(3) + P_5^1(4) + P_5^1(5) & = C_5^3(1 / 4) ^ 3 ( 1 - 1 / 4) ^ 2 + C_5^4(1 / 4) ^ 4 ( 1 - 1 / 4) + (1 / 4) ^ 5 \\
+			& = 0.1035
+		\end{align}
+		\item
+		$B_i:$第i个人及格。则以一个人及格为随机试验，那么其为5重伯努利试验，且$p_2 = P(B_i) = 0.1035$。
+		\begin{align}
+			P(\{\text{至少两人及格}\}) & = 1 - P_5^2(0) - P_5^2(1) \\
+			& = 0.0866z
+		\end{align}
+	\end{enumerate}
+	\vspace{1cm}
+	3. 问 $C$ 取何值时以下数列称为概率分布律:
+	
+	(1) $p_{k}=C\left(\frac{2}{3}\right)^{k}, \quad k=1,2,3$;
+	
+	(2) $p_{k}=C \frac{\lambda^{k}}{k !}, \quad k=1,2, \cdots$ 。
+	
+	\vspace*{1cm}
+	解：
+	\begin{enumerate}[(1)]
+		\item $\sum_{k = 1}^{3}(\frac{2}{3})^k = 38 / 27 \Rightarrow C \times \frac{38}{27} = 1 \Rightarrow C = 27 / 38$。
+		\item $\sum_{k = 0}^{\infty}\frac{\lambda ^ k}{k!}e ^ {-\lambda} = 1 \Rightarrow \sum_{k = 1}^{\infty}\frac{\lambda ^ k}{k!} = e ^ {\lambda} - 1 \Rightarrow C = (e ^ {\lambda} - 1) ^ {- 1}$
+	\end{enumerate}
+	4. 设离散型随机变量 $X$ 的分布律为
+	\begin{tabular}{c|ccc}
+		
+		X & -1 & 0 & 1 \\
+		\hline
+		P & 1/4 & a & b \\
+		
+	\end{tabular}
+	分布函数为 
+	
+	$F(x)=\left\{\begin{array}{cc}c, & -\infty<x<-1 \\ d, & -1 \leqslant x<0 \\ 3 / 4, & 0 \leqslant x<1 \\ e, & 1 \leqslant x<+\infty\end{array}\right.$,
+	
+	试求常数 $a, b, c, d, e$ 。
+	
+	\vspace*{1cm}
+	解：
+	$a = 1 / 2, b = 1 / 4, c = 0, d = 1 / 4, e = 1$。
+	
+	6. 某街道有 $n$ 个路口装有红绿灯, 各路口出现红绿灯相互独立, 红绿灯显示时间长度为 $1: 2$ 。现有 一辆汽车从头沿街道行驶, 以 $X$ 表示该车首次遇红灯前已通过的路口个数; 求 $X$ 的分布律。
+	
+	\vspace*{1cm}
+	解：
+	$A_i:\text{第}i\text{个路口遇见红灯}, i = 1, 2, \dots, n$。$P(A_i) = 1 / (1 + 2) = 1 / 3$。
+	\[
+	P(X = k) = \left\{
+	\begin{array}{cl}
+		(\frac{2}{3}) ^ k \frac{1}{3} & k = 0, 1, \dots, n - 1 \\
+		(\frac{2}{3}) ^ n & k = n
+	\end{array}\right.
+	\]
+	
+	8. 已知每天到达某港口的油船数 $X$ 服从参数为 2.5 的泊松分布, 而港口的服务能力最多只能服务 3 只船, 如果一天中到达港口的油船多于 3 只, 则超过 3 只的油船必须转港。(1) 求一天中必须有油船转 港的概率; (2) 求一天中最大可能到达港口的油船数及其概率; (3) 问服务能力提高到多少只油船时, 才 能使到达油船以 $90 \%$ 的概率得到服务。
+	
+	\vspace*{1cm}
+	解：
+	$p_k = \frac{2.5 ^ k}{k!} e ^ {-2.5}, \quad k = 0, 1, \dots$
+	\begin{enumerate}[(1)]
+		\item \begin{align}
+			P(X \geq 4) & = 1 - P( X < 4) \\
+			& = 1 - \sum_{k = 0}^{3}p_k \\
+			& \approx 0.2424
+		\end{align}
+		\item $\frac{p_{k + 1}}{p_k} = \lambda / (k + 1)$
+		\begin{align}
+			p_{k + 1} > p_k & \text{，如果 }k + 1  < \lambda \\
+			p_{k + 1} \leq p_k & \text{，如果 }k + 1 \geq \lambda
+		\end{align}
+		所以$k = 2$时$p_k = 0.2565$为$p_k$最大值。
+		\item 需要$P(X \leq C) \geq 0.9$。而$P(X \leq 4) =0.89, P(X \leq 5) = 0.96$。所以需要可以同时服务5只船。
+	\end{enumerate}
+\end{document}

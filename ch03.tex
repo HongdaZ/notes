@@ -112,6 +112,7 @@
 \usepackage{verbatim}
 \usepackage{soul}
 \usepackage[utf8]{inputenc}
+\usepackage{array}
 %\usepackage[algo2e,ruled,vlined]{algorithm2e} 
 %\usepackage{fancyvrb}
 
@@ -177,7 +178,7 @@
 		就是随机点 $(X, Y)$ 落入以 $(x, y)$ 为右上顶点的无穷短形区域的概率 (图 3-1)。
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.3]{figures/figure3-1.jpg}
+			\includegraphics[scale = 0.3]{figures/figure3-1.png}
 		\end{figure}
 	\end{frame}
 	
@@ -212,7 +213,7 @@
 	$$
 	\begin{figure}
 		\centering
-		\includegraphics[scale=0.3]{figures/figure3-2.jpg}
+		\includegraphics[scale=0.3]{figures/figure3-2.png}
 	\end{figure}
 	\end{frame}
 	
@@ -737,7 +738,7 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.3]{figures/figure3-3.jpg}
+			\includegraphics[scale = 0.3]{figures/figure3-3.png}
 		\end{figure}
 	\end{frame}
 	
@@ -829,7 +830,7 @@
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.3]{figures/figure3-4.jpg}
+			\includegraphics[scale = 0.3]{figures/figure3-4.png}
 		\end{figure}
 	\end{frame}
 	
@@ -851,7 +852,7 @@
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.3]{figures/figure3-5.jpg}
+			\includegraphics[scale = 0.3]{figures/figure3-5.png}
 		\end{figure}
 	\end{frame}
 	
@@ -991,10 +992,20 @@
 	
 	\begin{frame}
 		例 $3.11(X, Y)$ 的联合分布律如下, 求 $Y=1$ 条件下 $X$ 的条件分布律。
-		\begin{figure}
-			\centering
-			\includegraphics[scale = 0.3]{figures/figure3-51.jpg}
-		\end{figure}
+		\begin{center}
+			\begin{tabular}{@{}>{\bfseries}lcc@{}}
+				\toprule
+				$X$ & \multicolumn{2}{c}{$Y$} \\
+				\cmidrule(l){2-3}
+				& 1 & 2\\
+				\cmidrule(r){1-1}\cmidrule(lr){2-2} \cmidrule(lr){3-3}\\
+				1 & 1 / 16 & 1 / 16 \\
+				2 & 3 / 16 & 0 \\
+				3 & 1 / 8 & 3 / 16 \\
+				4 & 1 / 4 & 1 / 8 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}
@@ -1200,7 +1211,7 @@
 		解
 			\begin{figure}
 				\centering
-				\includegraphics[scale = 0.15]{figures/figure3-52.jpg}
+				\includegraphics[scale = 0.15]{figures/figure3.17.png}
 			\end{figure}
 		$$
 		\begin{aligned}
@@ -1258,7 +1269,7 @@
 		$$
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.2]{figures/figure3-53}
+			\includegraphics[scale = 0.2]{figures/figure3-53.png}
 		\end{figure}
 	\end{frame}
 	
@@ -1267,7 +1278,7 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.2]{figures/figure3-54}
+			\includegraphics[scale = 0.2]{figures/figure3-54.png}
 		\end{figure}
 		$$
 		z \geqslant 2, \quad F_{Z}(z)=\int_{0}^{1} \mathrm{~d} x \int_{0}^{z-2 x} e^{-y} \mathrm{~d} y=1-\frac{1}{2}\left(e^{2}-1\right) e^{-z}
@@ -1283,10 +1294,14 @@
 	\end{frame}
 	
 	\begin{frame}
+		\new{利用卷积公式的解法：}
+		$\begin{aligned} & X \sim U(0,1), \text {令} M=2 X, \text {则} M \in U(0,2), \\ & Y \sim E(1): \\ & Z=2 X+Y=M+Y . \\ & P_Z(z)=\int_{-\infty}^{\infty} p_M(m) p_Y(z-m) d m \\ & z<0, p_Z(z)=0 \\ & 0 \leqslant z \leqslant 2, \\ & p_z(z)=\int_0^z \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^z-1\right)=\frac{1}{2}\left(1-e^{-z}\right) \\ & z>2 . \\ & p_Z(z)=\int_0^z \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^2-1\right)\end{aligned}$
+	\end{frame}
+	\begin{frame}
 		例 3.19 在区间$[0, 1]$随机投两点。求两点间距离$Z$的分布函数与密度函数。
 		\begin{figure}
 			\centering
-			\includegraphics[scale = 0.37]{figures/figure3-55.jpg}
+			\includegraphics[scale = 0.37]{figures/figure3-55.png}
 		\end{figure}
 	\end{frame}
 	

@@ -1,0 +1,344 @@
+%!TEX program = xelatex
+\documentclass[14pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage[UTF8]{ctex}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage{float}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\title{	
+	\normalfont \huge
+	\textsc{概率统计} \\ [25pt] % Your university, school and/or department name(s)
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge 第五、六周作业答案 \\ % The assignment title
+	\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+	\date{}
+}
+
+\begin{document}
+	\maketitle % Print the title
+	习题二
+	20. 
+	\begin{center}
+		\begin{tabular}{l|l|l|l}
+			& $y=-1$ & $Y=1$ & $y=-2$ \\
+			\hline
+			$x=-1$ & $\frac{5}{20}(-2,1,1,-1)$ & $\frac{2}{20}(0,-1,-1,1)$ & $\frac{6}{20}\left(1,-2,-\frac{1}{2}, 2\right)$ \\
+			\hline
+			$x=2$ & $\frac{3}{20}(1,-2,-2,2)$ & $\frac{3}{20}(3,2,2,2)$ & $\frac{1}{20}(4,4,1,2)$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	(1)
+	
+	\begin{tabular}{c|c|c|c|c|c}
+		$z$ & -2 & 0 & 1 & 3 & 4 \\
+		\hline
+		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{9}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(2) \begin{tabular}{l|l|l|l|l|l}
+		$z$ & -2 & -1 & 1 & 2 & 4 \\
+		\hline
+		$p$ & $\frac{9}{20}$ & $\frac{2}{20}$ & $\frac{5}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(3) \begin{tabular}{c|c|c|c|c|c}
+		$z$ & -2 & -1 & $-\frac{1}{2}$ & 1 & 2 \\
+		\hline
+		$p$ & $\frac{3}{20}$ & $\frac{2}{20}$ & $\frac{6}{20}$ & $\frac{6}{20}$ & $\frac{3}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(4) \begin{tabular}{c|c|c|c}
+		$z$ & -1 & 1 & 2 \\
+		\hline
+		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{13}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	
+	23.
+	
+	\begin{center}
+		\begin{tabular}{l|l|l|l}
+			& $Y=1$ & $Y=2$ & $Y=3$ \\
+			\hline
+			$X=1$ & $(1,1)$ & $(2,1)$ & $(3,1)$ \\
+			\hline
+			$X=2$ & $(2,1)$ & $(2,2)$ & $(3,2)$ \\
+			\hline
+			$X=3$ & $(3,1)$ & $(3,2)$ & $(3,3)$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+		\begin{tabular}{c|c|c|c}
+			& $V=1$ & $V=2$ & $V=3$ \\
+			\hline
+			$U=1$ & $\frac{1}{9}$ & 0 & 0 \\
+			\hline
+			$U=2$ & $\frac{2}{9}$ & $\frac{1}{9}$ & 0 \\
+			\hline
+			$U=3$ & $\frac{2}{9}$ & $\frac{2}{9}$ & $\frac{1}{9}$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	习题三
+	2.
+	
+	$$
+	\begin{aligned}
+		p(Y=k \mid X=n) & =\frac{1}{n}, k=1,2, \cdots, n \\
+		p(X=n)=\frac{1}{3}, & \\
+		p(X=n, Y=k) & =p(Y=k \mid X=n) p(X=n) \\
+		& =\frac{1}{n} \times \frac{1}{3} \\
+		& =\frac{1}{3 n}, \quad n=1,2,3, k=1, \cdots, n .
+	\end{aligned}
+	$$
+	\begin{center}
+		\begin{tabular}{c|c|c|c|c}
+			& $y=1$ & $y=2$ & $y=3$ & $p_{i}$. \\
+			\hline
+			$x=1$ & $\frac{1}{3}$ & 0 & 0 & $\frac{1}{3}$ \\
+			\hline
+			$x=2$ & $\frac{1}{6}$ & $\frac{1}{6}$ & 0 & $\frac{1}{3}$ \\
+			\hline
+			$x=3$ & $\frac{1}{9}$ & $\frac{1}{9}$ & $\frac{1}{9}$ & $\frac{1}{3}$ \\
+			\hline
+			$p \cdot j$ & $\frac{11}{18}$ & $\frac{15}{18}$ & $\frac{1}{9}$ & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	4.见例3.3。
+	
+	9.
+	
+	(1)
+	
+	$$
+	\begin{aligned}
+		& \int_{0}^{3} \int_{0}^{3} p(x, y) d x d y\\
+		= &\int_{0}^{3} \int_{0}^{3} A x^{2} y^{2} d x d y \\
+		= & A \int_{0}^{3} x^{2} d x \int_{0}^{3} y^{2} d y \\
+		= & A \times 9 \times 9 \\
+		= & 81 \times A \\
+		= & 1
+	\end{aligned}
+	$$
+	
+	$$
+	\begin{aligned}
+		& \Rightarrow A=\frac{1}{81} \\
+		& p_{X}(x)=\frac{1}{9} x^{2}, x \in(0,3) \\
+		& p_{Y}(y)=\frac{1}{9} y^{2}, \quad y \in(0,3) \\
+		& p(x, y)=p_{X}(x) p_{Y}(y)=\frac{1}{81} x^{2} y^{2} \Rightarrow X, Y \text {独立 }
+	\end{aligned}
+	$$
+	（2）
+	$$
+	\begin{aligned}
+		& \int_{0}^{3} \int_{0}^{y} A x^{2} y^{2} d x d y \\
+		= & A \int_{0}^{3} y^{2} \cdot \frac{y^{3}}{3} d y \\
+		= & \frac{A}{3} \int_{0}^{3} y^{5} d y \\
+		= & \frac{A}{3} \int_{0}^{3} \frac{1}{6} d y^{6} \\
+		= & \frac{A}{18} \cdot 3^{6} \\
+		= & \frac{81}{2} A \\
+		= & 1 \\
+		\Rightarrow & A=\frac{2}{81}
+	\end{aligned}
+	$$
+	
+	由于Y的取值影响X的取值范围，所以X. Y 不独。
+	
+	11.(1)
+	$$
+	\begin{aligned}
+		p_{x}(x) & =\int_{x}^{\infty} p(x, y) d y \\
+		& =\int_{x}^{\infty} e^{-y} d y=e^{-x}, x \in(0, \infty)
+	\end{aligned}
+	$$
+	
+	$$
+	\begin{aligned}
+		&p_Y(y)=\int_{0}^{y} p(x, y) d x \\
+		& =\int_{0}^{y} e^{-y} d x \\
+		& =y e^{-y}, y \in(0, \infty)
+	\end{aligned}
+	$$
+	
+	(2)
+	
+	\begin{align}
+		&P(x+Y<1)=\int_{0}^{\frac{1}{2}} \int_{x}^{1-x} e^{-y} d y d x \\
+		&=1+e^{-1}-2 e^{-\frac{1}{2}}
+	\end{align}
+	20. 
+	\begin{center}
+		\begin{tabular}{l|l|l|l}
+			& $y=-1$ & $Y=1$ & $y=-2$ \\
+			\hline
+			$x=-1$ & $\frac{5}{20}(-2,1,1,-1)$ & $\frac{2}{20}(0,-1,-1,1)$ & $\frac{6}{20}\left(1,-2,-\frac{1}{2}, 2\right)$ \\
+			\hline
+			$x=2$ & $\frac{3}{20}(1,-2,-2,2)$ & $\frac{3}{20}(3,2,2,2)$ & $\frac{1}{20}(4,4,1,2)$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	(1)
+	
+	\begin{tabular}{c|c|c|c|c|c}
+		$z$ & -2 & 0 & 1 & 3 & 4 \\
+		\hline
+		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{9}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(2) \begin{tabular}{l|l|l|l|l|l}
+		$z$ & -2 & -1 & 1 & 2 & 4 \\
+		\hline
+		$p$ & $\frac{9}{20}$ & $\frac{2}{20}$ & $\frac{5}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(3) \begin{tabular}{c|c|c|c|c|c}
+		$z$ & -2 & -1 & $-\frac{1}{2}$ & 1 & 2 \\
+		\hline
+		$p$ & $\frac{3}{20}$ & $\frac{2}{20}$ & $\frac{6}{20}$ & $\frac{6}{20}$ & $\frac{3}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	(4) \begin{tabular}{c|c|c|c}
+		$z$ & -1 & 1 & 2 \\
+		\hline
+		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{13}{20}$ \\
+		\hline
+	\end{tabular}
+	
+	
+	23.
+	
+	\begin{center}
+		\begin{tabular}{l|l|l|l}
+			& $Y=1$ & $Y=2$ & $Y=3$ \\
+			\hline
+			$X=1$ & $(1,1)$ & $(2,1)$ & $(3,1)$ \\
+			\hline
+			$X=2$ & $(2,1)$ & $(2,2)$ & $(3,2)$ \\
+			\hline
+			$X=3$ & $(3,1)$ & $(3,2)$ & $(3,3)$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+		\begin{tabular}{c|c|c|c}
+			& $V=1$ & $V=2$ & $V=3$ \\
+			\hline
+			$U=1$ & $\frac{1}{9}$ & 0 & 0 \\
+			\hline
+			$U=2$ & $\frac{2}{9}$ & $\frac{1}{9}$ & 0 \\
+			\hline
+			$U=3$ & $\frac{2}{9}$ & $\frac{2}{9}$ & $\frac{1}{9}$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	27. $F_{z}(z)=P(Z \leqslant z)=P(X - Y \leqslant z)=1-P(X-Y>Z)$
+	
+	$$
+	\begin{aligned}
+		& =1-\int_{z}^{1} \int_{0}^{x-z} 3 x d y d x \\
+		& =\frac{3}{2} z-\frac{1}{2} z^{3}, z \in(0,1)
+	\end{aligned}
+	$$
+	
+	$p_{z}(z)=F_{z}^{\prime}(z)=\frac{3}{2}-\frac{3}{2} z^{2}, z \in(0,1)$
+	
+	30. $p(x=k)=\frac{\lambda^{k}}{k !} e^{-\lambda}$
+	
+	$$
+	\frac{p(x=1)}{p(x=2)}=\frac{2}{\lambda}=2 \Rightarrow \lambda=1
+	$$
+	
+	$p(Z>0)=1-p(Z \leq 0)=1-p(x \leq 0, y \leq 0)=1-\left(e^{-1}\right)^{2}=1 - e^{-2}$
+
+32.
+\[
+\begin{aligned}
+	& p_X(x)=\alpha e^{-\alpha x}, \quad x>0 \\
+	& F_X(x)=1-e^{-\alpha x}, \quad x>0
+\end{aligned}
+\]
+(1)
+\[
+\begin{aligned}
+	Z&=\min (X, Y) \\
+	F_Z(z)&=1 -  \left(1-F_X(z)\right)\left(1-F_Y(z)\right) \\
+	& =1-e^{-(\alpha+\beta) z}, z>0 \\
+	p_Z(z)&=F_Z^{\prime}(z)=(\alpha+\beta) e^{-(\alpha+\beta) z}, z>0
+\end{aligned}
+\]
+(2)
+\[
+\begin{aligned}
+	& Z=\max (X, Y) \\
+	& F_Z(z)=F_X(z) F_Y(z)=\left(1-e^{-\alpha z}\right)\left(1-e^{-\beta z}\right), z, 0 \\
+	& p_Z(z)=F_Z^{\prime}(z)=\alpha e^{-\alpha z}+\beta e^{-\beta z}-(\alpha+\beta) e^{-(\alpha + \beta) \beta z}, z>0
+\end{aligned}
+\]
+(3)
+\[
+\begin{aligned}
+	Z& =X+Y\\
+	p_Z(z) & =\int_{-\infty}^{\infty} p_x(x) p_y(z-x) d x \\
+	& =\int_0^z \alpha e^{-\alpha x} \beta e^{-\beta(z-x)} d x \\
+	& =\frac{\alpha \beta}{\beta-\alpha}\left(e^{-\alpha z}-e^{-\beta z}\right), z>0
+\end{aligned}
+\]
+33.
+\[
+\begin{aligned}
+	F_Z(z) & =P(X=1) p(Z\leq z \mid X=1)+p(X=2) p(Z \leq z \mid X=2) \\
+	& =P(X=1) P(2 X+Y \leq z \mid X=1)+p(X=2) p(2X+Y \leq z \mid X=2) \\
+	& =\frac{1}{3} P(Y \leq z-2 \mid X=1)+\frac{2}{3} p(Y \leq z-4 \mid X=2) \\
+	& =\frac{1}{3} P(Y \leq z-2)+\frac{2}{3} p(Y \leq z-4) \\
+	& =\frac{1}{3} F_Y(z-2)+\frac{2}{3} F_Y(z-4) \\
+	p_Z(z) & =F_Z^{\prime}(z)=\frac{1}{3} p(z-2)+\frac{2}{3} p(z-4)
+\end{aligned}
+\]
+	
+	
+\end{document}
