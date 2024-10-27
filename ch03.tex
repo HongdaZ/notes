@@ -1295,7 +1295,7 @@
 	
 	\begin{frame}
 		\new{利用卷积公式的解法：}
-		$\begin{aligned} & X \sim U(0,1), \text {令} M=2 X, \text {则} M \in U(0,2), \\ & Y \sim E(1): \\ & Z=2 X+Y=M+Y . \\ & P_Z(z)=\int_{-\infty}^{\infty} p_M(m) p_Y(z-m) d m \\ & z<0, p_Z(z)=0 \\ & 0 \leqslant z \leqslant 2, \\ & p_z(z)=\int_0^z \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^z-1\right)=\frac{1}{2}\left(1-e^{-z}\right) \\ & z>2 . \\ & p_Z(z)=\int_0^z \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^2-1\right)\end{aligned}$
+		$\begin{aligned} & X \sim U(0,1), \text {令} M=2 X, \text {则} M \in U(0,2), \\ & Y \sim E(1): \\ & Z=2 X+Y=M+Y . \\ & P_Z(z)=\int_{-\infty}^{\infty} p_M(m) p_Y(z-m) d m \\ & z<0, p_Z(z)=0 \\ & 0 \leqslant z \leqslant 2, \\ & p_z(z)=\int_0^z \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^z-1\right)=\frac{1}{2}\left(1-e^{-z}\right) \\ & z>2 . \\ & p_Z(z)=\int_0^2 \frac{1}{2} e^{-(z-m)} d m=\frac{1}{2} e^{-z}\left(e^2-1\right)\end{aligned}$
 	\end{frame}
 	\begin{frame}
 		例 3.19 在区间$[0, 1]$随机投两点。求两点间距离$Z$的分布函数与密度函数。
@@ -1537,9 +1537,10 @@
 		
 		$$
 		F_{M}(z)=F_{X}(z) F_{Y}(z)=\left\{\begin{array}{cc}
+			0, & z \leq 0 \\
 			z^{2} / a^{2}, & 0<z<a \\
-			0, & \text { 其他 }
-		\end{array},\right.
+			1, & z \geq a
+		\end{array}\right.
 		$$
 		
 		
