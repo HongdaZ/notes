@@ -45,78 +45,36 @@
 \begin{document}
 	\maketitle % Print the title
 	习题二
-	20. 
-	\begin{center}
-		\begin{tabular}{l|l|l|l}
-			& $y=-1$ & $Y=1$ & $y=-2$ \\
-			\hline
-			$x=-1$ & $\frac{5}{20}(-2,1,1,-1)$ & $\frac{2}{20}(0,-1,-1,1)$ & $\frac{6}{20}\left(1,-2,-\frac{1}{2}, 2\right)$ \\
-			\hline
-			$x=2$ & $\frac{3}{20}(1,-2,-2,2)$ & $\frac{3}{20}(3,2,2,2)$ & $\frac{1}{20}(4,4,1,2)$ \\
-			\hline
-		\end{tabular}
-	\end{center}
+	20. 设随机变量 $X$ 服从 $[-1,1]$ 上的均匀分布, $Y=X^{2}$, 求 $Y$ 的密度函数 $p_{Y}(y)$ 。
 	
-	(1)
+	\vspace*{1cm}
+	解：
+	$F_Y(y) = P(Y \leq y) = P(X ^ 2 \leq y) = P(-\sqrt{y} \leq X \leq \sqrt{y}) = 2 \sqrt{y} \times \frac{1}{2} = \sqrt{y}, y \in [0, 1]$。
+	\[
+	p_Y(y) = \left\{
+	\begin{array}{cl}
+		\frac{1}{2\sqrt{y}} & \quad y \in [0, 1] \\
+		0 & \quad \text{otherwise}
+	\end{array}
+	\right.
+	\]
 	
-	\begin{tabular}{c|c|c|c|c|c}
-		$z$ & -2 & 0 & 1 & 3 & 4 \\
-		\hline
-		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{9}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
-		\hline
-	\end{tabular}
+	23. 设随机变量 $X \sim N(0,1)$, 求 $Y=2(1-|X|)$ 的概率密度函数。
 	
-	(2) \begin{tabular}{l|l|l|l|l|l}
-		$z$ & -2 & -1 & 1 & 2 & 4 \\
-		\hline
-		$p$ & $\frac{9}{20}$ & $\frac{2}{20}$ & $\frac{5}{20}$ & $\frac{3}{20}$ & $\frac{1}{20}$ \\
-		\hline
-	\end{tabular}
+	\vspace*{1cm}
+	\begin{align}
+		F_Y(y) & = P(2(1 - |X|) \leq y) \\
+		& = P( X \geq 0, 2(1 - |X|) \leq y) + P( X < 0, 2(1 - |X|) \leq y) \\
+		& = P(X > 1 - \frac{y}{2}) + P(X < \frac{y}{2} - 1) \\
+		& = 2P(X < \frac{y}{2} - 1) \\
+		& = 2 \Phi(\frac{y}{2} - 1)
+	\end{align}
 	
-	(3) \begin{tabular}{c|c|c|c|c|c}
-		$z$ & -2 & -1 & $-\frac{1}{2}$ & 1 & 2 \\
-		\hline
-		$p$ & $\frac{3}{20}$ & $\frac{2}{20}$ & $\frac{6}{20}$ & $\frac{6}{20}$ & $\frac{3}{20}$ \\
-		\hline
-	\end{tabular}
+	$p_Y(y) = \frac{\,d2\Phi(\frac{y}{2} - 1)}{\,dy} = 2 \phi(\frac{y}{2} - 1) / 2 = \phi(\frac{y}{2} - 1) = \frac{1}{\sqrt{2\pi}}e ^ {-(\frac{y}{2} - 1) ^ 2 / 2}, y \in (-\infty, 2]$
 	
-	(4) \begin{tabular}{c|c|c|c}
-		$z$ & -1 & 1 & 2 \\
-		\hline
-		$p$ & $\frac{5}{20}$ & $\frac{2}{20}$ & $\frac{13}{20}$ \\
-		\hline
-	\end{tabular}
-	
-	
-	23.
-	
-	\begin{center}
-		\begin{tabular}{l|l|l|l}
-			& $Y=1$ & $Y=2$ & $Y=3$ \\
-			\hline
-			$X=1$ & $(1,1)$ & $(2,1)$ & $(3,1)$ \\
-			\hline
-			$X=2$ & $(2,1)$ & $(2,2)$ & $(3,2)$ \\
-			\hline
-			$X=3$ & $(3,1)$ & $(3,2)$ & $(3,3)$ \\
-			\hline
-		\end{tabular}
-	\end{center}
-	
-	\begin{center}
-		\begin{tabular}{c|c|c|c}
-			& $V=1$ & $V=2$ & $V=3$ \\
-			\hline
-			$U=1$ & $\frac{1}{9}$ & 0 & 0 \\
-			\hline
-			$U=2$ & $\frac{2}{9}$ & $\frac{1}{9}$ & 0 \\
-			\hline
-			$U=3$ & $\frac{2}{9}$ & $\frac{2}{9}$ & $\frac{1}{9}$ \\
-			\hline
-		\end{tabular}
-	\end{center}
 	习题三
-	2.
+	
+	2. 设随机变量 $X$ 在数字 $1,2,3$ 中任取一个, 随机变量 $Y$ 在 $1 \sim X$ 中任取一个, 求 $(X, Y)$ 的联合 分布律及 $X, Y$ 的边缘分布律.
 	
 	$$
 	\begin{aligned}
@@ -144,7 +102,16 @@
 	
 	4.见例3.3。
 	
-	9.
+	9. 已知随机变量 $(X, Y)$ 的联合密度函数为
+	
+	$$
+	p(x, y)=\left\{\begin{array}{cc}
+		A x^{2} y^{2}, & (x, y) \in G \\
+		0, & \text { otherwise }
+	\end{array},\right.
+	$$
+	
+	按照 (1) $G=\{(x, y) \mid 0<x<3,0<y<3\} ;$ (2) $G=\{(x, y) \mid 0<x<y<3\}$, 分别求常数 $A$ 并讨论 $X, Y$ 的独立性.
 	
 	(1)
 	
@@ -183,7 +150,18 @@
 	
 	由于Y的取值影响X的取值范围，所以X. Y 不独。
 	
-	11.(1)
+	11. 设二维随机变量 $(X, Y)$ 的联合密度函数为
+	
+	$$
+	p(x, y)=\left\{\begin{array}{cc}
+		e^{-y}, & 0<x<y \\
+		0, & \text { otherwise }
+	\end{array},\right.
+	$$
+	
+	求: (1) $X, Y$ 的边缘密度; (2) 概率 $P(X+Y<1)$ .
+	
+	(1)
 	$$
 	\begin{aligned}
 		p_{x}(x) & =\int_{x}^{\infty} p(x, y) d y \\
@@ -205,7 +183,17 @@
 		&P(x+Y<1)=\int_{0}^{\frac{1}{2}} \int_{x}^{1-x} e^{-y} d y d x \\
 		&=1+e^{-1}-2 e^{-\frac{1}{2}}
 	\end{align}
-	20. 
+	20. 设二维随机变量 $(X, Y)$ 的联合分布律为
+	
+	\begin{tabular}{|c|c|c|c|}
+		\hline & $Y = -1$ & $Y = 1$ & $Y = 2$ \\
+		\hline $X = -1$ & $5 / 20$ & $2 / 20$ & $6 / 20$ \\
+		\hline $X = 2$ & $3 / 20$ & $3 / 20$ & $1 / 20$ \\
+		\hline
+	\end{tabular}
+	
+	试求以下分布律: (1) $Z=X+Y$; (2) $Z=X Y$; (3) $Z=X / Y$; (4) $Z=\max (X, Y)$ .
+	
 	\begin{center}
 		\begin{tabular}{l|l|l|l}
 			& $y=-1$ & $Y=1$ & $y=-2$ \\
@@ -248,7 +236,7 @@
 	\end{tabular}
 	
 	
-	23.
+	23.设随机变量 $X, Y$ 相互独立, 且都等可能地取 $1,2,3$ 为值, 令随机变量 $U=\max (X, Y), V=$ $\min (X, Y)$, 求 $(U, V)$ 的联合分布律. 
 	
 	\begin{center}
 		\begin{tabular}{l|l|l|l}
@@ -276,7 +264,18 @@
 		\end{tabular}
 	\end{center}
 	
-	27. $F_{z}(z)=P(Z \leqslant z)=P(X - Y \leqslant z)=1-P(X-Y>Z)$
+	27. 设随机变量 $(X, Y)$ 的密度函数为
+	
+	$$
+	p(x, y)=\left\{\begin{array}{cc}
+		3 x, & 0<y<x<1 \\
+		0, & \text { otherwise }
+	\end{array},\right.
+	$$
+	
+	求 $Z=X-Y$ 的密度函数.
+	
+	$F_{z}(z)=P(Z \leqslant z)=P(X - Y \leqslant z)=1-P(X-Y>Z)$
 	
 	$$
 	\begin{aligned}
@@ -287,15 +286,18 @@
 	
 	$p_{z}(z)=F_{z}^{\prime}(z)=\frac{3}{2}-\frac{3}{2} z^{2}, z \in(0,1)$
 	
-	30. $p(x=k)=\frac{\lambda^{k}}{k !} e^{-\lambda}$
+	30. 设随机变量 $X, Y$ 相互独立, 均服从参数相同的泊松分布, 已知 $P(X=1)=2 P(X=2)$, 求 $P(\max (X, Y)>0)$ .
 	
-	$$
+	$p(x=k)=\frac{\lambda^{k}}{k !} e^{-\lambda}$
+	
+	$
 	\frac{p(x=1)}{p(x=2)}=\frac{2}{\lambda}=2 \Rightarrow \lambda=1
-	$$
+	$
 	
 	$p(Z>0)=1-p(Z \leq 0)=1-p(x \leq 0, y \leq 0)=1-\left(e^{-1}\right)^{2}=1 - e^{-2}$
 
-32.
+32. 设系统 $L$ 由两个相互独立的子系统 $L_{1}, L_{2}$ 连接而成, $L_{1}, L_{2}$ 的寿命 $X, Y$ 分别服从参数为 $\alpha, \beta$ 的指数分布, 按以下连接方式求系统 $L$ 寿命 $Z$ 的概率密度函数: (1) 串联; (2) 并联; (3) 备用 $\left(L_{1}\right.$ 损 坏, $L_{2}$ 启动).
+
 \[
 \begin{aligned}
 	& p_X(x)=\alpha e^{-\alpha x}, \quad x>0 \\
@@ -328,7 +330,8 @@
 	& =\frac{\alpha \beta}{\beta-\alpha}\left(e^{-\alpha z}-e^{-\beta z}\right), z>0
 \end{aligned}
 \]
-33.
+33. 设随机变量 $X, Y$ 独立, 其中 $X$ 的分布律为 $P(X=k)=k / 3, k=1,2, Y$ 的密度函数为 $p(y)$, 求随机变量 $Z=2 X+Y$ 的概率密度函数 $g(z)$ .
+
 \[
 \begin{aligned}
 	F_Z(z) & =P(X=1) p(Z\leq z \mid X=1)+p(X=2) p(Z \leq z \mid X=2) \\
