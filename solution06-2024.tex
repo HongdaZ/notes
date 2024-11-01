@@ -1,0 +1,90 @@
+%!TEX program = xelatex
+\documentclass[14pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage[UTF8]{ctex}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage{float}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\title{	
+	\normalfont \huge
+	\textsc{概率统计} \\ [25pt] % Your university, school and/or department name(s)
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge 第七周作业答案 \\ % The assignment title
+	\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+	\date{}
+}
+
+\begin{document}
+	\maketitle % Print the title
+	习题四
+	
+	4. (几何分布的数学期望) 独立重复地做一项试验, 每次试验成功的概率为 $p, 0<p<1$, 记 $X$ 为 第一次成功时试验的次数, 则 $X$ 的期望是多少?
+	
+	$$
+	\begin{aligned}
+		& P(X=k)=(1-p)^{k-1} p, k=1,2,3, \cdots \\
+		& E(X)=\sum_{k=1}^{\infty} k(1-p)^{k-1} p \\
+		& (1-p) E(X)=\sum_{k=1}^{\infty} k(1-p)^{k} p=\sum_{k=2}^{\infty}(k-1)(1-p)^{k-1} p \\
+		& E(X)[1-(1-p)]=\sum_{k=0}^{\infty} p(1-p)^{k} \\
+		& \Rightarrow p E(X)=p \lim _{n \rightarrow \infty} \frac{\left[1-(1-p)^{n}\right]}{1-(1-p)} \\
+		& \Rightarrow E(X)=\frac{1}{p}
+	\end{aligned}
+	$$
+	6. 已知随机变量 $Y=\ln X \sim N\left(\mu, \sigma^{2}\right)$, 此时我们称 $X$ 为对数正态分布, 试求其数学期望 $E X$ .
+	$$
+	\begin{aligned}
+		E(X) & =E\left(e^{Y}\right)=\int_{-\infty}^{\infty} e^{y} f_{Y}(y) d y \\
+		& =\int_{-\infty}^{\infty} e^{y} \frac{1}{\sqrt{2 \pi} \sigma} \exp \left[-\frac{1}{2 \sigma^{2}}(y-\mu)^{2}\right] d y \\
+		& =\int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\frac{1}{2 \sigma^{2}}\left(y^{2}-2 y \mu+\mu^{2}-2 y \sigma^{2}\right)\right\} d y \\
+		& =\int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma} \exp \left(-\frac{1}{2 \sigma^{2}}\left\{\left[y-\left(\mu+\sigma^{2}\right)\right]^{2}-\left(\mu+\sigma^{2}\right)^{2}+\mu^{2}\right\} d y\right. \\
+		& =\int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma} \exp \left(-\frac{1}{2 \sigma^{2}}\left\{\left[y-(\mu+\sigma)^{2}\right]^{2}-2 \mu \sigma^{2}-\sigma^{4}\right\}\right) d y\\
+		& =\exp \left[-\frac{1}{2 \sigma^{2}}\left(-2 \mu \sigma^{2}-\sigma^{4}\right)\right] \\
+		& =\exp \left(\mu+\frac{\sigma^{2}}{2}\right) \\
+	\end{aligned}
+	$$
+	9. 设 $X_{1}, X_{2}, \cdots, X_{n}$ 均服从 $[0,1]$ 上的均匀分布, 且相互独立.令 $X_{(1)}=\min \left(X_{1}, X_{2}, \cdots, X_{n}\right)$ . 试求 $E X_{(1)}$ .
+	$$
+	\begin{aligned}
+		&f_{X_{(1)}}(x)=n(1-x)^{n-1}, x \in[0,1] \\
+		& E\left(x_{(1)}\right)=\int_{0}^{1} x n(1-x)^{n-1} d x \\
+		& 1-E\left(x_{(1)}\right)=\int_{0}^{1} n(1-x)^{n-1} d x-\int_{0}^{1} x n(1-x)^{n-1} d x \\
+		& =\int_{0}^{1}(1-x) n(1-x)^{n-1} d x \\
+		& =n \int_{0}^{1}(1-x)^{n} d x \\
+		& =\frac{n}{n+1} \int_{0}^{1}-d(1-x)^{n+1} \\
+		& \Rightarrow \frac{n}{n+1} \\
+		& \begin{aligned}
+			\left.E\left(X_{(1)}\right)\right) & =1-\frac{n}{n+1}=\frac{1}{n+1}
+		\end{aligned}
+	\end{aligned}
+	$$
+	
+	
+\end{document}

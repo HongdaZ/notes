@@ -1,0 +1,112 @@
+%!TEX program = xelatex
+\documentclass[14pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage[UTF8]{ctex}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage{float}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\title{	
+	\normalfont \huge
+	\textsc{概率统计} \\ [25pt] % Your university, school and/or department name(s)
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge 第八周作业答案 \\ % The assignment title
+	\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+	\date{}
+}
+
+\begin{document}
+	\maketitle % Print the title
+	习题四
+	
+	10. 设随机变量 $X$ 的密度函数为 $p(x)=\frac{1}{2} e^{-|x-\mu|}, \mu \in \mathbf{R}$, 试求 $D X$ .
+	
+	解：
+	令$t=x-\mu$。
+	\[
+	\begin{aligned}
+		E X&=\int_{-\infty}^{\infty} x \frac{1}{2} e^{-|x-\mu|} d x \\
+		& =\int_{-\infty}^{\infty}(t+\mu) \frac{1}{2} e^{-|t|} d t \\
+		& =\int_{-\infty}^{\infty} \frac{1}{2} t e^{-|t|} d t+\int_{-\infty}^{\infty} \frac{1}{2} \mu e^{-|t|} d t \\
+		& =0+2 \int_0^{\infty} \frac{1}{2} \mu e^{-t} d t \\
+		& =0+\mu \int_0^{\infty} e^{-t} d t \\
+		& =\mu \\
+	\end{aligned}
+	\]
+	\[
+	\begin{aligned}
+		 \operatorname{Var}(X)&=\int_{-\infty}^{\infty}(x-\mu)^2 \frac{1}{2} e^{-|x-\mu|} d x \\
+		& =\int_{-\infty}^{\infty} t^2 \frac{1}{2} e^{-|t|} d t \\
+		& =2 \int_0^{\infty} t^2 \frac{1}{2} e^{-|t|} d t \\
+		& =\int_0^{\infty} t^2 e^{-t} d t \\
+		& =-\int_0^{\infty} t^2 d e^{-t} \\
+		& =-\left(\left.t^2 e^{-t}\right|_0 ^{\infty}-\int_0^{\infty} e^{-t}(2 t) d t\right) \\
+		& =-\left(0-0-2 \int_0^{\infty} e^{-t} t d t\right) \\
+		& =-2 \int_0^{\infty} t d e^{-t} \\
+		& =-2\left(\left.t e^{-t}\right|_0 ^{\infty}-\int_0^{\infty} e^{-t} d t\right) \\
+		& =2 \int_0^{\infty} e^{-t} d t \\
+		& =2
+	\end{aligned}
+	\]
+	
+	11. 设随机变量 $X$ 服从参数为 $\lambda$ 的泊松分布 $P(\lambda), \lambda>0$ .试求 $D X$ .
+	
+	解：$P(X=k) =\frac{\lambda^k}{k!} e^{-\lambda}, k=0,1,2, \ldots \\$
+	\[
+	\begin{aligned}
+		E X^2 & =\sum_{k=0}^{\infty} k^2 \frac{\lambda^k}{k!} e^{-\lambda} \\
+		& =e^{-\lambda } \sum_{k=1}^{\infty} \frac{k \lambda^k}{(k-1)!} \\
+		& =  \lambda e^{-\lambda} \sum_{k=1}^{\infty} \frac{(k-1)+1}{(k-1)!} \lambda^{k-1}\\
+		& =\lambda e^{-\lambda} \sum_{k=0}^{\infty} \frac{k+1}{k!} \lambda^k \\
+		& =\lambda e^{-\lambda}\left(e^\lambda+\sum_{k=0}^{\infty} \frac{k}{k!} \lambda^k\right) \\
+		& =\lambda+\lambda e^{-\lambda} \cdot \lambda \sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!} \\
+		& =\lambda+\lambda^2 e^{-\lambda} \sum_{k=0}^{\infty} \frac{\lambda ^k}{k!} \\
+		& =\lambda+\lambda^2 e^{-\lambda} \cdot e^\lambda \\
+		& =\lambda+\lambda^2
+	\end{aligned}
+	\]
+	$\operatorname{Var}(X)=E X^2-(E X)^2=\lambda+\lambda^2-\lambda^2=\lambda$
+	
+	12. 设随机变量 $X$ 的方差存在, 试证明: $D X \leqslant E(X-c)^{2}, c$ 为任意常数.
+	
+	解：
+	\[
+	\begin{aligned}
+		E(X-c)^2 & =E(X-E X+E X-c)^2 \\
+		& =E\left[(X-E X)^2+(E X-c)^2+2(X-E X)(X-c)\right] \\
+		& =E(X-E X)^2+E(E X-c)^2+2 E(X-E X)(E X-c) \\
+		& =\operatorname{Var} X+(E X-c)^2+2(E X - c) E(X-E X) \\
+		& =\operatorname{Var} X+(E X-c)^2+2(E X-c) \cdot 0\\
+		& =\operatorname{Var} X+(E X-c)^2 \\
+		& \geqslant \operatorname{Var} X
+	\end{aligned}
+	\]
+	
+\end{document}
